@@ -8,7 +8,7 @@ KAFKA_HOME = str(os.getenv("KAFKA_HOME"))
 KAFKA_BROKERS = str(os.getenv("KAFKA_BROKERS"))
 KAFKA_ZOOKEEPER = str(os.getenv("KAFKA_ZOOKEEPER"))
 KAFKA_CONNECT = str(os.getenv("KAFKA_BROKERS")) if not os.getenv("KAFKA_CONNECT") else str(os.getenv("KAFKA_CONNECT"))
-KAFKA_COMMAND = KAFKA_HOME+"bin/kafka-consumer-groups.sh --zookeeper "+ZOOKEEPER
+KAFKA_COMMAND = KAFKA_HOME+"bin/kafka-consumer-groups.sh --zookeeper "+KAFKA_ZOOKEEPER
 
 def consumergroup(argv):
     if len(argv) == 3 and argv[2] == "list":

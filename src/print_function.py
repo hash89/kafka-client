@@ -1,3 +1,5 @@
+import sys
+
 def usage():
     print "Kakfa script usage"
     print ""
