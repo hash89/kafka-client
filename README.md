@@ -1,7 +1,7 @@
-# kafka-cli
+# kafka-client
 Command line tool for managing kafka and kafka connect.
 
-The goal of this cli, is to facilitate the use of kafka scripts and REST API call.
+The goal of this client, is to facilitate the use of kafka scripts and REST API call.
 
 You can find all the command here : https://kafka.apache.org/documentation.html
 
@@ -11,7 +11,7 @@ Before starting, you will need 3 (or 4) environement variables
 - KAFKA_ZOOKEEPER : used (in almost every command) for call to zookeeper
 - (KAFKA_CONNECT) : used if the distributed connect process is on different hosts than kafka brokers
 
-You can use the cli with this command, and show usage
+You can use the client with this command, and see the usage
 ```
 $> kafka-cli
 ```
