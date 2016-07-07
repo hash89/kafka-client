@@ -18,10 +18,11 @@ RUN wget https://bootstrap.pypa.io/get-pip.py \
 ADD http://apache.trisect.eu/kafka/0.10.0.0/kafka_2.11-0.10.0.0.tgz .
 RUN tar xzf kafka_2.11-0.10.0.0.tgz && mv kafka_2.11-0.10.0.0 kafka
 
+WORKDIR kafka/
+
 # Retreive Kafka client file
-ADD src/ kafka/kafka-client/
-RUN chmod u+x kafka/kafka-client/kafka
+ADD src/ kafka-client/
+RUN chmod u+x kafka-client/kafka-client
 
-WORKDIR kafka/kafka-client/
+WORKDIR kafka-client/
 
-ENTRYPOINT kafka
