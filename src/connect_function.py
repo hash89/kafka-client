@@ -108,7 +108,7 @@ def create(json_file_name):
         if resp.status_code == 201 and len(resp.json()) != 0:
             connector = resp.json()
             print "Connector name : "+str(connector['name'])
-            print "  State : "+connector['connector']['state']
+            print "  State : "+connector['state']
             for c in connector['tasks']:
                 print "  Task %s is %s on %s" % (c['id'],c["state"], c['worker_id'])
         else:
@@ -141,7 +141,7 @@ def status(connector_name):
     elif resp.status_code == 200 and len(resp.json()) != 0:
         connector = resp.json()
         print "Connector name : "+str(connector['name'])
-        print "  State : "+connector['connector']['state']
+        print "  State : "+connector['state']
         for c in connector['tasks']:
             print "  Task %s is %s on %s" % (c['id'],c["state"], c['worker_id'])
 
