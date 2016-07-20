@@ -9,9 +9,17 @@ from consumergroup_function import *
 from server_function import *
 from common import *
 
+try:
+    import requests
+except ImportError:
+    raise ImportError('Module Requests not found. Install it and try again !')
+
 if (len(sys.argv) <= 1):
     usage()
 elif not os.getenv('KAFKA_HOME') or not os.getenv('KAFKA_BROKERS') or not os.getenv('KAFKA_ZOOKEEPER') or not os.getenv('KAFKA_CONNECT'):
     print getMissingEnvVar()
 else:
-    locals()[sys.argv[1]](sys.argv)
+    if sys.argv[1] in ["zookeeper","server","topic","console","consumergroup","connect"]:
+        locals()[sys.argv[1]](sys.argv)
+    else:
+        usage()
